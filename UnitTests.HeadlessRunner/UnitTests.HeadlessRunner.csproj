@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>UnitTests.HeadlessRunner</AssemblyName>
     <RootNamespace>UnitTests.HeadlessRunner</RootNamespace>
     <PackageId>UnitTests.HeadlessRunner</PackageId>
@@ -13,16 +13,13 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
     <Version>1.0.0</Version>
-    <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <Authors>Redth</Authors>
-    <PackOnBuild>true</PackOnBuild>
     <Owners>Redth</Owners>
     <NeutralLanguage>en</NeutralLanguage>
     <Copyright>© Redth</Copyright>
     <RepositoryUrl>https://github.com/redth/UnitTests.HeadlessRunner</RepositoryUrl>
     <LangVersion>7.1</LangVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
     <PackageLicenseUrl>https://github.com/redth/UnitTests.HeadlessRunner</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/redth/UnitTests.HeadlessRunner</PackageProjectUrl>
   </PropertyGroup>
@@ -36,6 +33,7 @@
     <None Remove="NUnitXml.xslt" />
     <None Remove="HeadlessTestRunner.config" />
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="NUnitXml.xslt" />
   </ItemGroup>
