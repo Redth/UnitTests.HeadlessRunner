@@ -16,12 +16,12 @@
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>Redth</Authors>
     <Owners>Redth</Owners>
-    <NeutralLanguage>en</NeutralLanguage>
     <Copyright>© Redth</Copyright>
     <RepositoryUrl>https://github.com/redth/UnitTests.HeadlessRunner</RepositoryUrl>
     <LangVersion>7.1</LangVersion>
     <PackageLicenseUrl>https://github.com/redth/UnitTests.HeadlessRunner</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/redth/UnitTests.HeadlessRunner</PackageProjectUrl>
+    <IsPackable>True</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
