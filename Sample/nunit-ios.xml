@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-results name="Test results" errors="0" inconclusive="0" ignored="0" invalid="0" not-run="0" date="2018-03-06" time="15:01:03" total="1" failures="0" skipped="0">
+  <environment os-version="unknown" platform="unknown" cwd="unknown" machine-name="unknown" user="unknown" user-domain="unknown" nunit-version="xUnit.net 2.3.1.3858" clr-version="64-bit .NET Standard [collection-per-class, non-parallel]"></environment>
+  <culture-info current-culture="unknown" current-uiculture="unknown" />
+  <test-suite type="Assemblies" name="xUnit.net Tests" executed="True" success="True" result="Success" time="0.064">
+    <results>
+      <test-suite type="Assembly" executed="True" name="SampleTestApp.iOS.dll" result="Success" success="True" time="0.064">
+        <results>
+          <test-suite type="TestCollection" executed="True" name="Test collection for SampleTestApp.iOS.Tests" result="Success" success="True" time="0.004">
+            <results>
+              <test-case name="SampleTestApp.iOS.Tests.SimpleTest" executed="True" result="Success" success="True" time="0.0038791"></test-case>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
