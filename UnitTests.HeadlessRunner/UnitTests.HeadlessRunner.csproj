@@ -4,6 +4,27 @@
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyName>UnitTests.HeadlessRunner</AssemblyName>
     <RootNamespace>UnitTests.HeadlessRunner</RootNamespace>
+    <PackageId>UnitTests.HeadlessRunner</PackageId>
+    <Summary>Platform agnostic unit test runner</Summary>
+    <PackageTags>xamarin, xunit, ios, android, uwp</PackageTags>
+    <Title>Unit Tests Headless Runner</Title>
+    <Description>Platform agnostic unit test runner</Description>
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+    <Version>1.0.0</Version>
+    <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
+    <Authors>Redth</Authors>
+    <PackOnBuild>true</PackOnBuild>
+    <Owners>Redth</Owners>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Copyright>© Redth</Copyright>
+    <RepositoryUrl>https://github.com/redth/UnitTests.HeadlessRunner</RepositoryUrl>
+    <LangVersion>7.1</LangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+    <PackageLicenseUrl>https://github.com/redth/UnitTests.HeadlessRunner</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/redth/UnitTests.HeadlessRunner</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
