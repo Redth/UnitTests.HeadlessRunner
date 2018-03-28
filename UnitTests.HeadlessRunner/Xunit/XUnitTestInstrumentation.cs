@@ -13,8 +13,12 @@ namespace UnitTests.HeadlessRunner.Xunit
 
         protected override XUnitTestRunner CreateRunner(LogWriter logger)
         {
-            return new XUnitTestRunner(logger);
+            var runner = new XUnitTestRunner(logger);
+            runner.SetFilters(Filters);
+            return runner;
         }
+
+        public List<XUnitFilter> Filters { get; set; } = new List<XUnitFilter>();
 
         protected override string LogTag { get; set; } = "xUnit";
     }
