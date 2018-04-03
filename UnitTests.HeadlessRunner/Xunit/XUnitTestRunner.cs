@@ -19,7 +19,7 @@ namespace UnitTests.HeadlessRunner.Xunit
         XElement assembliesElement;
         List<XUnitFilter> filters;
 
-        protected XUnitResultFileFormat ResultFileFormat { get; set; } = XUnitResultFileFormat.NUnit;
+        public TestResultsFormat ResultFileFormat { get; set; } = TestResultsFormat.XunitV2;
         protected AppDomainSupport AppDomainSupport { get; set; } = AppDomainSupport.Denied;
         protected override string ResultsFileName { get; set; } = "TestResults.xUnit.xml";
 
@@ -728,11 +728,11 @@ namespace UnitTests.HeadlessRunner.Xunit
             {
                 switch (ResultFileFormat)
                 {
-                    case XUnitResultFileFormat.XunitV2:
+                    case TestResultsFormat.XunitV2:
                         assembliesElement.Save(writer);
                         break;
 
-                    case XUnitResultFileFormat.NUnit:
+                    case TestResultsFormat.NUnit:
                         Transform_Results("NUnitXml.xslt", assembliesElement, writer);
                         break;
 

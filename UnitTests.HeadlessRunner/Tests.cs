@@ -8,22 +8,7 @@ namespace UnitTests.HeadlessRunner
 {
     public static class Tests
     {
-        public static Task<bool> RunAsync(string listenerHost, int listenerPort, params Assembly[] testAssemblies)
-        {
-            return RunAsync(listenerHost, listenerPort, null, testAssemblies.Select(a => new TestAssemblyInfo(a, a.Location)).ToArray());
-        }
-
-        public static Task<bool> RunAsync(string listenerHost, int listenerPort, params TestAssemblyInfo[] testAssemblies)
-        {
-            return RunAsync(listenerHost, listenerPort, null, testAssemblies);
-        }
-
-        public static Task<bool> RunAsync (string listenerHost, int listenerPort, List<Xunit.XUnitFilter> filters, params Assembly[] testAssemblies)
-        {
-            return RunAsync (listenerHost, listenerPort, filters, testAssemblies.Select (a => new TestAssemblyInfo (a, a.Location)).ToArray());
-        }
-
-        public static Task<bool> RunAsync(string listenerHost, int listenerPort, List<Xunit.XUnitFilter> filters, params TestAssemblyInfo[] testAssemblies)
+        public static Task<bool> RunAsync(TestOptions options)
         {
             /* Hack to preserve assembly during linking */
             var preserve = typeof(global::Xunit.Sdk.TestFailed);
@@ -34,15 +19,35 @@ namespace UnitTests.HeadlessRunner
                 var xunitRunner = new Xunit.XUnitTestInstrumentation
                 {
                     NetworkLogEnabled = true,
-                    NetworkLogHost = listenerHost,
-                    NetworkLogPort = listenerPort
+                    NetworkLogHost = options.NetworkLogHost,
+                    NetworkLogPort = options.NetworkLogPort
                 };
 
-                if (filters != null && filters.Any())
-                    xunitRunner.Filters.AddRange(filters);
+                if (options.Filters?.Any() ?? false)
+                    xunitRunner.Filters.AddRange(options.Filters);
 
-                return xunitRunner.Run(testAssemblies);
+                xunitRunner.ResultsFormat = options.Format;
+
+                return xunitRunner.Run(options.Assemblies.Select(a => new TestAssemblyInfo(a, a.Location)).ToArray());
             });
         }
+    }
+
+    public class TestOptions
+    {
+        public string NetworkLogHost { get; set; }
+        public int NetworkLogPort { get; set; }
+
+        public List<Xunit.XUnitFilter> Filters { get; set; } = new List<Xunit.XUnitFilter>();
+
+        public List<Assembly> Assemblies { get; set; } = new List<Assembly>();
+
+        public TestResultsFormat Format { get; set; } = TestResultsFormat.XunitV2;
+    }
+
+    public enum TestResultsFormat
+    {
+        XunitV2,
+        NUnit
     }
 }
