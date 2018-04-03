@@ -139,7 +139,7 @@ namespace UnitTests.HeadlessRunner
                 Logger.OnInfo (LogTag, $"Failed to send results to TCP Listener: {NetworkLogHost}:{NetworkLogPort} => " + ex);
             }
 
-            return runner.FailedTests == 0;
+            return runner.TotalTests > 0 && runner.FailedTests == 0;
         }
 
 
