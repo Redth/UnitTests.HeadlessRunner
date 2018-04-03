@@ -1,6 +1,6 @@
 ﻿namespace UnitTests.HeadlessRunner
 {
-    internal enum TestCompletionStatus
+    public enum TestCompletionStatus
     {
         Undefined,
         Passed,

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace UnitTests.HeadlessRunner
 {
-    internal abstract class TestRunner
+    public abstract class TestRunner
     {
         public string LogTag { get; internal set; }
         public long InconclusiveTests { get; protected set; } = 0;

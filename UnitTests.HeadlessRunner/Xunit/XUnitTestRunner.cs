@@ -12,7 +12,7 @@ using UnitTests.HeadlessRunner;
 
 namespace UnitTests.HeadlessRunner.Xunit
 {
-    internal class XUnitTestRunner : TestRunner
+    public class XUnitTestRunner : TestRunner
     {
         readonly TestMessageSink messageSink;
 

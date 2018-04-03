@@ -5,7 +5,7 @@ using UnitTests.HeadlessRunner;
 
 namespace UnitTests.HeadlessRunner.Xunit
 {
-    internal class XUnitTestInstrumentation : TestInstrumentation<XUnitTestRunner>
+    public class XUnitTestInstrumentation : TestInstrumentation<XUnitTestRunner>
     {
         public XUnitTestInstrumentation()
         {   

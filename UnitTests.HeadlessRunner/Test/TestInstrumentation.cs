@@ -9,7 +9,7 @@ using System.Text;
 
 namespace UnitTests.HeadlessRunner
 {
-    internal abstract class TestInstrumentation<TRunner> where TRunner : TestRunner
+    public abstract class TestInstrumentation<TRunner> where TRunner : TestRunner
     {
         const string ResultExecutedTests = "run";
         const string ResultPassedTests = "passed";
